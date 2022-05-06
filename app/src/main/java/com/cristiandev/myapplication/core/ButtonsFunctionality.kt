@@ -133,7 +133,7 @@ class ActionButtonAc(private var view: View, private var tvResult: TextView) : I
 class ActionButtonDelete(private var view: View, private var tvResult: TextView) : IButtonFunction {
     private var result: String = tvResult.text.toString()
     override fun actionButton() {
-        if (result.length == 1) {
+        if (TextViewValidations().deleteButtonValidation(tvResult)) {
             tvResult.setText("0")
         } else {
             tvResult.setText(result.dropLast(1))
@@ -151,7 +151,9 @@ class ActionButtonComma(private var view: View, private var tvResult: TextView) 
 class ActionButtonAdd(private var view: View, private var tvResult: TextView) : IButtonFunction {
     private var result: String = tvResult.text.toString()
     override fun actionButton() {
-        tvResult.setText(result + "+")
+        if(!TextViewValidations().operationSignValidation(tvResult)) {
+            tvResult.setText(result + "+")
+        }
     }
 }
 
@@ -159,23 +161,26 @@ class ActionButtonSubtract(private var view: View, private var tvResult: TextVie
     IButtonFunction {
     private var result: String = tvResult.text.toString()
     override fun actionButton() {
-        tvResult.setText(result + "-")
-    }
+        if(!TextViewValidations().operationSignValidation(tvResult)) {
+            tvResult.setText(result + "-")
+        }    }
 }
 
 class ActionButtonMultiply(private var view: View, private var tvResult: TextView) :
     IButtonFunction {
     private var result: String = tvResult.text.toString()
     override fun actionButton() {
-        tvResult.setText(result + "*")
-    }
+        if(!TextViewValidations().operationSignValidation(tvResult)) {
+            tvResult.setText(result + "*")
+        }    }
 }
 
 class ActionButtonDivide(private var view: View, private var tvResult: TextView) : IButtonFunction {
     private var result: String = tvResult.text.toString()
     override fun actionButton() {
-        tvResult.setText(result + "/")
-    }
+        if(!TextViewValidations().operationSignValidation(tvResult)) {
+            tvResult.setText(result + "/")
+        }    }
 }
 
 class ActionButtonEqualsTo(private var view: View, private var tvResult: TextView) :
