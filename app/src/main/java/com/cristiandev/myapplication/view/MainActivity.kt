@@ -8,58 +8,41 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.cristiandev.myapplication.R
+import com.cristiandev.myapplication.databinding.ActivityMainBinding
 import com.cristiandev.myapplication.model.*
 
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var binding:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setViewOnClickListeners()
     }
 
     private fun setViewOnClickListeners() {
-        var btn0: Button = findViewById(R.id.btn0)
-        var btn1: Button = findViewById(R.id.btn1)
-        var btn2: Button = findViewById(R.id.btn2)
-        var btn3: Button = findViewById(R.id.btn3)
-        var btn4: Button = findViewById(R.id.btn4)
-        var btn5: Button = findViewById(R.id.btn5)
-        var btn6: Button = findViewById(R.id.btn6)
-        var btn7: Button = findViewById(R.id.btn7)
-        var btn8: Button = findViewById(R.id.btn8)
-        var btn9: Button = findViewById(R.id.btn9)
-        var btnAc: Button = findViewById(R.id.btnAc)
-        var btnDivide: Button = findViewById(R.id.btnDivide)
-        var btnMultiply: Button = findViewById(R.id.btnMultiply)
-        var btnSubtract: Button = findViewById(R.id.btnSubtract)
-        var btnAdd: Button = findViewById(R.id.btnAdd)
-        var btnEqualsTo: Button = findViewById(R.id.btnEqualsTo)
-        var btnComma: Button = findViewById(R.id.btnComma)
-        var btnDelete: ImageButton = findViewById(R.id.btnDelete)
-        var tvResult: TextView = findViewById(R.id.tvResult)
-        var svResult: ScrollView = findViewById(R.id.svResult)
-        ButtonNumber0().setViewOnClickListener(btn0, tvResult)
-        ButtonNumber1().setViewOnClickListener(btn1, tvResult)
-        ButtonNumber2().setViewOnClickListener(btn2, tvResult)
-        ButtonNumber3().setViewOnClickListener(btn3, tvResult)
-        ButtonNumber4().setViewOnClickListener(btn4, tvResult)
-        ButtonNumber5().setViewOnClickListener(btn5, tvResult)
-        ButtonNumber6().setViewOnClickListener(btn6, tvResult)
-        ButtonNumber7().setViewOnClickListener(btn7, tvResult)
-        ButtonNumber8().setViewOnClickListener(btn8, tvResult)
-        ButtonNumber9().setViewOnClickListener(btn9, tvResult)
-        ButtonAc().setViewOnClickListener(btnAc, tvResult)
-        ButtonDelete().setViewOnClickListener(btnDelete, tvResult)
-        ButtonComma().setViewOnClickListener(btnComma, tvResult)
-        ButtonAdd().setViewOnClickListener(btnAdd, tvResult)
-        ButtonSubtract().setViewOnClickListener(btnSubtract, tvResult)
-        ButtonMultiply().setViewOnClickListener(btnMultiply, tvResult)
-        ButtonDivide().setViewOnClickListener(btnDivide, tvResult)
-        ButtonEqualsTo().setViewOnClickListener(btnEqualsTo, tvResult)
-        setScrollViewConfig(svResult)
+        ButtonNumber0().setViewOnClickListener(binding.btn0, binding.tvResult)
+        ButtonNumber1().setViewOnClickListener(binding.btn1, binding.tvResult)
+        ButtonNumber2().setViewOnClickListener(binding.btn2, binding.tvResult)
+        ButtonNumber3().setViewOnClickListener(binding.btn3, binding.tvResult)
+        ButtonNumber4().setViewOnClickListener(binding.btn4, binding.tvResult)
+        ButtonNumber5().setViewOnClickListener(binding.btn5, binding.tvResult)
+        ButtonNumber6().setViewOnClickListener(binding.btn6, binding.tvResult)
+        ButtonNumber7().setViewOnClickListener(binding.btn7, binding.tvResult)
+        ButtonNumber8().setViewOnClickListener(binding.btn8, binding.tvResult)
+        ButtonNumber9().setViewOnClickListener(binding.btn9, binding.tvResult)
+        ButtonAc().setViewOnClickListener(binding.btnAc, binding.tvResult)
+        ButtonDelete().setViewOnClickListener(binding.btnDelete, binding.tvResult)
+        ButtonComma().setViewOnClickListener(binding.btnComma, binding.tvResult)
+        ButtonAdd().setViewOnClickListener(binding.btnAdd, binding.tvResult)
+        ButtonSubtract().setViewOnClickListener(binding.btnSubtract, binding.tvResult)
+        ButtonMultiply().setViewOnClickListener(binding.btnMultiply, binding.tvResult)
+        ButtonDivide().setViewOnClickListener(binding.btnDivide, binding.tvResult)
+        ButtonEqualsTo().setViewOnClickListener(binding.btnEqualsTo, binding.tvResult)
+        setScrollViewConfig(binding.svResult)
     }
 
 

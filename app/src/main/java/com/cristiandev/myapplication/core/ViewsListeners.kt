@@ -117,35 +117,3 @@ class ButtonEqualsTo() : ISetOnClickListener {
         view.setOnClickListener { ActionButtonEqualsTo(view, textView).actionButton() }
     }
 }
-
-
-/*private fun deleteButton() {
-    var tvResult: TextView = findViewById(R.id.tvResult)
-    var result: String = tvResult.text.toString()
-    if (result.length == 1)  {
-        tvResult.setText("0")
-    } else {
-        tvResult.text = result.dropLast(1)
-    }
-}
-
-private fun pressOperationButtons(view: View) {
-    var tvResult: TextView = findViewById(R.id.tvResult)
-    var result: String = tvResult.text.toString()
-    var btnPressed: String = view.tag.toString()
-    val operationButtons: ArrayList<String> = arrayListOf("/", "x", "-", "+", ",")
-    if (result.length >=1 &&  !operationButtons.contains(result.last().toString())){
-        when(btnPressed) {
-            "btnDivide" -> tvResult.setText(result + "/")
-            "btnMultiply" -> tvResult.setText(result + "x")
-            "btnSubtract" -> tvResult.setText(result + "-")
-            "btnAdd" -> tvResult.setText(result + "+")
-            "btnComma" -> tvResult.setText(result + ",")
-        }
-    }
-}
-
-private fun equalsToButton() {
-    var tvResult: TextView = findViewById(R.id.tvResult)
-    tvResult.setText("Resultado")
-}*/
